@@ -1,0 +1,91 @@
+{
+	"QMainWindow":[
+		{
+			"tittle":"Modern UI Desing",
+			"icon":"./logo.png",
+			"frameless": true,
+			"transluscentBg": true,
+			"sizeGrip": "sizeGrip",
+			"navigation":[
+				{
+					"minimize":"minimizeBtn",
+					"close": "closeBtn",
+					"restore":[
+						{
+							"buttonName": "restoreBtn",
+							"normalIcon": "./resources/Icons - W/square.svg",
+							"maximizedIcon": "./resources/Icons - W/copy.svg"
+						}
+					],
+					"moveWindow": "headerContainer",
+					"tittleBar": "footerContainer"
+				}
+			]
+		}
+	],
+	"QCustomSlideMenu": [{
+		"name": "leftMenuContainer",
+		"defaultSize": [{
+			"width": 55,
+			"height": "parent"
+		}],
+		"collapsedSize": [{
+			"width": 55,
+			"height": "parent"
+		}],
+		"expandedSize": [{
+			"width": 130,
+			"height": "parent"
+		}],
+		"toggleButton": [{
+			"buttonName": "menuBtn",
+			"icons": [{
+				"whenMenuIsCollapsed": "./resources/Icons - P/align-justify.svg",
+				"whenMenuIsExpanded": "./resources/Icons - P/chevron-left.svg"
+			}]
+		}],
+		"menuTransitionAnimation": [{
+			"animationDuration": 200,
+			"animationEasingCurve": "Linear"
+		}]
+	},
+	{
+		"name": "centerMenuContainer",
+		"defaultSize": [{
+			"width": 0,
+			"height": "parent"
+		}],
+		"collapsedSize": [{
+			"width": 0,
+			"height": "parent"
+		}],
+		"expandedSize": [{
+			"width": 200,
+			"height": "parent"
+		}],
+		"menuTransitionAnimation": [{
+			"animationDuration": 200,
+			"animationEasingCurve": "Linear"
+		}]
+	},
+	{
+		"name": "rightMenuContainer",
+		"defaultSize": [{
+			"width": 0,
+			"height": "parent"
+		}],
+		"collapsedSize": [{
+			"width": 0,
+			"height": "parent"
+		}],
+		"expandedSize": [{
+			"width": 200,
+			"height": "parent"
+		}],
+		"menuTransitionAnimation": [{
+			"animationDuration": 200,
+			"animationEasingCurve": "Linear"
+		}]
+	}
+	]
+}
