@@ -22,34 +22,385 @@
   <property name="styleSheet">
    <string notr="true">*{
 	border: none;
-	bacground-color: transparent;
-	bacground: transparent;
 	padding: 0;
 	margin: 0;
 	color: #ffffff;
 }
+
+/*-------------------- Background --------------------*/
 #centralwidget{
 	background-color: #1f232a;
-	border-radius: 10px;
+	border-radius: 5px;
 }
-#leftMenuContainer{
+
+/*-------------------- Menu Style --------------------*/
+#leftMenuContainer, #rightMenuContainer{
 	background-color: #16191d;
 	border-radius: 20px;
 }
+
+#centerSubMenuContainer, #rightSubMenuContainer, #popupNotificationContainer{
+	background-color: #16191d;
+	border-radius: 10px;
+}
+
+/*-------------------- Header &amp; Footer --------------------*/
+#headerContainer, #footerContainer{
+	background-color: #16191d;
+	border-radius: 15px;
+}
+
+/*-------------------- Group Box --------------------*/
+QGroupBox {
+    background-color: #16191d;
+    border-radius: 5px;
+    margin-top: 1ex; /* leave space at the top for the title */
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top center; /* position at the top center */
+	padding: 2px;
+    background-color: #6E25E6;
+	border-radius: 5px;
+}
+
+/*-------------------- Button --------------------*/
 QPushButton{
 	text-align: left;
 	padding: 5px 5px;
 	border-radius: 5px;
 }
-#centerSubMenuContainer, #rightSubMenuContainer, #popupNotificationContainer{
-	background-color: #16191d;
-	border-radius: 20px;
+
+#click{
+	background-color: #6E25E6;
+	text-align: center;
+	padding: 5px 5px;
+	border-radius: 10px;
 }
-#headerContainer, #footerContainer{
-	background-color: #16191d;
-	border-radius: 15px;
+
+/*-------------------- Prograss Bar --------------------*/
+QProgressBar {
+    border: 2px solid #101216;
+    border-radius: 5px;
+	background-color: #1f232a;
+	text-align: center;
+	border-radius: 5px;
 }
-</string>
+
+QProgressBar::chunk {
+    background-color: #6E25E6;
+    width: 10px;
+	margin: 2px;
+	border-radius: 3px;
+}
+
+/*-------------------- CheckBox --------------------*/
+QCheckBox {
+	background-color: rgb(45, 51, 61);
+    spacing: 10px;
+	padding: 5px;
+	border-radius: 5px;
+	background-color: #1f232a;
+}
+
+QCheckBox::indicator {
+    width: 17px;
+    height: 17px;
+	border-radius: 5px;
+}
+
+QCheckBox::indicator:unchecked {
+	background-color: #2d333d;
+}
+
+QCheckBox::indicator:unchecked:hover {
+	background-color: #6E25E6;
+}
+
+QCheckBox::indicator:checked {
+	background-color: #6E25E6;
+	image: url(:/Icon-W/resources/Icons - W/check.svg);
+}
+
+/*-------------------- ComboBox --------------------*/
+  QComboBox {
+    border-radius: 5px;
+    padding: 5px 20px 5px 8px;
+}
+
+QComboBox:editable {
+   background-color: #1f232a;
+}
+
+QComboBox:!editable, QComboBox::drop-down:editable {
+     background-color: #1f232a;
+}
+
+/* QComboBox gets the &quot;on&quot; state when the popup is open */
+QComboBox:!editable:on, QComboBox::drop-down:editable:on {
+    background-color: #1f232a;
+}
+
+QComboBox:on { /* shift the text when the popup opens */
+    padding-top: 5px;
+    padding-left: 10px;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+	padding-right: 5px;
+    width: 20px;
+	image: url(:/Icon-W/resources/Icons - W/chevron-down.svg);
+}
+
+QComboBox QListView {
+	background-color: #1f232a;
+	font-size: 12px;
+	border: 1px solid rgba(0, 0, 0, 10%);
+	padding: 5px;
+	outline: 0px;
+}
+
+QComboBox QListView:item {
+	background-color: #1f232a;
+	padding: 5px 5px 5px 10px;
+	border-radius: 5px;
+}
+
+QComboBox QListView:item:hover {
+	background-color: #6E25E6;
+}
+
+QComboBox QListView:item:selected {
+	background-color: #6E25E6;
+}
+
+/*-------------------- LineEdit --------------------*/
+QLineEdit {
+	background-color: #1f232a;
+	border-radius: 5px;
+	padding: 5px;
+	border: 1px solid #101216;
+}
+
+QLineEdit:focus {
+	border: 1px solid #6E25E6;
+}
+
+/*-------------------- SpinBox --------------------*/
+QSpinBox {
+	background-color: #1f232a;
+	border: 1px solid #101216;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+QSpinBox:focus {
+	border: 1px solid #6E25E6;
+}
+
+QSpinBox::up-button {
+    subcontrol-origin: border;
+    subcontrol-position: top right;
+    width: 20px; 
+	margin-right: 3px;
+	margin-top: 3px;
+	border-radius: 5px;
+}
+
+QSpinBox::up-button:pressed {
+    background-color: #2b313b;
+}
+
+QSpinBox::up-arrow {
+	image: url(:/Icon-W/resources/Icons - W/chevron-up.svg);
+    width: 15px;
+    height: 15px;
+}
+
+QSpinBox::down-button {
+    subcontrol-origin: border;
+    subcontrol-position: bottom right; 
+     width: 20px; 
+	margin-right: 3px;
+	margin-bottom: 3px;
+	border-radius: 5px;
+}
+
+QSpinBox::down-button:pressed {
+    background-color: #2b313b;
+}
+
+QSpinBox::down-arrow {
+	image: url(:/Icon-W/resources/Icons - W/chevron-down.svg);
+    width: 15px;
+    height: 15px;
+}
+
+/*-------------------- RadioBotton --------------------*/
+QRadioButton {
+	background-color: #1f232a;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+QRadioButton::indicator {
+    width: 18px;
+    height: 18px;
+	border-radius: 9px;
+}
+
+QRadioButton::indicator::unchecked {
+    background-color: #2d333d;
+}
+
+QRadioButton::indicator:unchecked:hover {
+	background-color: #6E25E6;
+}
+
+QRadioButton::indicator::checked {
+   	background-color: #6E25E6;
+	image: url(:/Icon-W/resources/Icons - W/check-circle.svg)
+}
+
+/*-------------------- Slider --------------------*/
+QSlider::groove:horizontal {
+    height: 5px; 
+    background: #1f232a;
+    margin: 2px 0;
+}
+
+QSlider::handle:horizontal {
+    background: #6E25E6;
+    width: 25px;
+    margin: -3px 0; 
+    border-radius: 2px;
+}
+
+/*-------------------- Scroll Area --------------------*/
+QScrollArea{
+	background-color: #16191d;
+}
+
+QScrollArea QScrollBar:vertical {
+    background: #1f232a;
+    width: 8px;
+	border-radius: 4px
+}
+QScrollArea QScrollBar::handle:vertical {
+    background: #6E25E6;
+    min-height: 20px;
+	border-radius: 4px
+}
+QScrollArea QScrollBar::add-line:vertical {
+    height: 0;
+}
+
+QScrollArea QScrollBar::sub-line:vertical {
+    height: 0;
+}
+QScrollArea QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+    width: 0px;
+    height: 0px;
+}
+
+QScrollArea QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+/*-------------------- Table Widget --------------------*/
+QTableWidget {
+	background-color: #16191d;
+	color: #fff;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+QTableWidget QTableCornerButton::section {
+    background-color: #16191d;
+	margin: 10px;
+}
+
+QTableWidget QHeaderView {
+	background-color: #16191d;
+}
+
+QTableWidget QHeaderView::section  {
+	background-color: #1f232a;
+	margin: 0.5px;
+	border-style: none;
+	border: 1px solid #16191d;
+	padding-left: 5px;
+}
+
+QTableWidget::item {
+	border: 1px solid #16191d;
+	background-color: #1f232a;
+}
+
+QTableWidget::item::focus {
+	color:black;
+}
+
+QTableWidget::item::selected {
+	background-color: #6E25E6;
+}
+
+/* QScrollBar - Vertical */
+QTableWidget QScrollBar:vertical {
+    background: #16191d;
+    width: 8px;
+	border-radius: 4px
+}
+QTableWidget QScrollBar::handle:vertical {
+    background: #6E25E6;
+    min-height: 20px;
+	border-radius: 4px
+}
+QTableWidget QScrollBar::add-line:vertical {
+    height: 0;
+}
+
+QTableWidget QScrollBar::sub-line:vertical {
+    height: 0;
+}
+QTableWidget QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+    width: 0px;
+    height: 0px;
+}
+
+QTableWidget QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+/* QScrollBar - Horizontal */
+QTableWidget QScrollBar:horizontal  {
+    background: #16191d;
+    height: 8px;
+	border-radius: 4px
+}
+QTableWidget QScrollBar::handle:horizontal  {
+    background: #6E25E6;
+    min-height: 20px;
+	border-radius: 4px
+}
+QTableWidget QScrollBar::add-line:horizontal  {
+    width: 0;
+}
+
+QTableWidget QScrollBar::sub-line:horizontal  {
+    width: 0;
+}
+QTableWidget QScrollBar::up-arrow:horizontal , QScrollBar::down-arrow:horizontal  {
+    width: 0px;
+    height: 0px;
+}
+
+QTableWidget QScrollBar::add-page:horizontal , QScrollBar::sub-page:horizontal  {
+    background: none;
+}</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_15">
@@ -137,7 +488,6 @@ QPushButton{
                <property name="font">
                 <font>
                  <pointsize>10</pointsize>
-                 <weight>75</weight>
                  <bold>true</bold>
                 </font>
                </property>
@@ -196,7 +546,7 @@ text-align: center;</string>
                </property>
                <property name="icon">
                 <iconset resource="resources.qrc">
-                 <normaloff>:/Icons - W/resources/Icons - W/user.svg</normaloff>:/Icons - W/resources/Icons - W/user.svg</iconset>
+                 <normaloff>:/Icon-W/resources/Icons - W/user.svg</normaloff>:/Icon-W/resources/Icons - W/user.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -229,7 +579,7 @@ text-align: center;</string>
                </property>
                <property name="icon">
                 <iconset resource="resources.qrc">
-                 <normaloff>:/Icons - W/resources/Icons - W/sun.svg</normaloff>:/Icons - W/resources/Icons - W/sun.svg</iconset>
+                 <normaloff>:/Icon-W/resources/Icons - W/sun.svg</normaloff>:/Icon-W/resources/Icons - W/sun.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -262,7 +612,7 @@ text-align: center;</string>
                </property>
                <property name="icon">
                 <iconset resource="resources.qrc">
-                 <normaloff>:/Icons - W/resources/Icons - W/more-horizontal.svg</normaloff>:/Icons - W/resources/Icons - W/more-horizontal.svg</iconset>
+                 <normaloff>:/Icon-W/resources/Icons - W/more-horizontal.svg</normaloff>:/Icon-W/resources/Icons - W/more-horizontal.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -335,7 +685,7 @@ text-align: center;</string>
                </property>
                <property name="icon">
                 <iconset resource="resources.qrc">
-                 <normaloff>:/Icons - W/resources/Icons - W/minus.svg</normaloff>:/Icons - W/resources/Icons - W/minus.svg</iconset>
+                 <normaloff>:/Icon-W/resources/Icons - W/minus.svg</normaloff>:/Icon-W/resources/Icons - W/minus.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -368,7 +718,7 @@ text-align: center;</string>
                </property>
                <property name="icon">
                 <iconset resource="resources.qrc">
-                 <normaloff>:/Icons - W/resources/Icons - W/square.svg</normaloff>:/Icons - W/resources/Icons - W/square.svg</iconset>
+                 <normaloff>:/Icon-W/resources/Icons - W/square.svg</normaloff>:/Icon-W/resources/Icons - W/square.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -401,7 +751,7 @@ text-align: center;</string>
                </property>
                <property name="icon">
                 <iconset resource="resources.qrc">
-                 <normaloff>:/Icons - W/resources/Icons - W/x.svg</normaloff>:/Icons - W/resources/Icons - W/x.svg</iconset>
+                 <normaloff>:/Icon-W/resources/Icons - W/x.svg</normaloff>:/Icon-W/resources/Icons - W/x.svg</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -519,7 +869,7 @@ text-align: center;</string>
                    <string/>
                   </property>
                   <property name="icon">
-                   <iconset resource="resources.qrc">
+                   <iconset>
                     <normaloff>:/Icons - P/resources/Icons - P/align-justify.svg</normaloff>:/Icons - P/resources/Icons - P/align-justify.svg</iconset>
                   </property>
                   <property name="iconSize">
@@ -586,7 +936,7 @@ text-align: center;</string>
                   </property>
                   <property name="icon">
                    <iconset resource="resources.qrc">
-                    <normaloff>:/Icons - W/resources/Icons - W/home.svg</normaloff>:/Icons - W/resources/Icons - W/home.svg</iconset>
+                    <normaloff>:/Icon-W/resources/Icons - W/home.svg</normaloff>:/Icon-W/resources/Icons - W/home.svg</iconset>
                   </property>
                   <property name="iconSize">
                    <size>
@@ -603,7 +953,7 @@ text-align: center;</string>
                   </property>
                   <property name="icon">
                    <iconset resource="resources.qrc">
-                    <normaloff>:/Icons - P/resources/Icons - P/inbox.svg</normaloff>:/Icons - P/resources/Icons - P/inbox.svg</iconset>
+                    <normaloff>:/Icon-P/resources/Icons - P/inbox.svg</normaloff>:/Icon-P/resources/Icons - P/inbox.svg</iconset>
                   </property>
                   <property name="iconSize">
                    <size>
@@ -626,7 +976,7 @@ text-align: center;</string>
                   </property>
                   <property name="icon">
                    <iconset resource="resources.qrc">
-                    <normaloff>:/Icons - P/resources/Icons - P/database.svg</normaloff>:/Icons - P/resources/Icons - P/database.svg</iconset>
+                    <normaloff>:/Icon-P/resources/Icons - P/database.svg</normaloff>:/Icon-P/resources/Icons - P/database.svg</iconset>
                   </property>
                   <property name="iconSize">
                    <size>
@@ -683,7 +1033,7 @@ text-align: center;</string>
                   </property>
                   <property name="icon">
                    <iconset resource="resources.qrc">
-                    <normaloff>:/Icons - P/resources/Icons - P/settings.svg</normaloff>:/Icons - P/resources/Icons - P/settings.svg</iconset>
+                    <normaloff>:/Icon-P/resources/Icons - P/settings.svg</normaloff>:/Icon-P/resources/Icons - P/settings.svg</iconset>
                   </property>
                   <property name="iconSize">
                    <size>
@@ -700,7 +1050,7 @@ text-align: center;</string>
                   </property>
                   <property name="icon">
                    <iconset resource="resources.qrc">
-                    <normaloff>:/Icons - P/resources/Icons - P/info.svg</normaloff>:/Icons - P/resources/Icons - P/info.svg</iconset>
+                    <normaloff>:/Icon-P/resources/Icons - P/info.svg</normaloff>:/Icon-P/resources/Icons - P/info.svg</iconset>
                   </property>
                   <property name="iconSize">
                    <size>
@@ -717,7 +1067,7 @@ text-align: center;</string>
                   </property>
                   <property name="icon">
                    <iconset resource="resources.qrc">
-                    <normaloff>:/Icons - P/resources/Icons - P/help-circle.svg</normaloff>:/Icons - P/resources/Icons - P/help-circle.svg</iconset>
+                    <normaloff>:/Icon-P/resources/Icons - P/help-circle.svg</normaloff>:/Icon-P/resources/Icons - P/help-circle.svg</iconset>
                   </property>
                   <property name="iconSize">
                    <size>
@@ -782,7 +1132,7 @@ text-align: center;</string>
               <number>0</number>
              </property>
              <property name="bottomMargin">
-              <number>0</number>
+              <number>15</number>
              </property>
              <item>
               <widget class="QFrame" name="topCenterMenuTitleFrame">
@@ -797,24 +1147,44 @@ text-align: center;</string>
                  <number>0</number>
                 </property>
                 <property name="leftMargin">
-                 <number>15</number>
+                 <number>20</number>
                 </property>
                 <property name="topMargin">
-                 <number>15</number>
+                 <number>0</number>
                 </property>
                 <property name="rightMargin">
-                 <number>15</number>
+                 <number>20</number>
                 </property>
                 <property name="bottomMargin">
-                 <number>15</number>
+                 <number>0</number>
                 </property>
-                <item alignment="Qt::AlignHCenter">
+                <item alignment="Qt::AlignLeft">
                  <widget class="QLabel" name="topCenterMenuTitle">
                   <property name="text">
                    <string>Menu</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item alignment="Qt::AlignRight">
+                 <widget class="QPushButton" name="closeCenterMenu">
+                  <property name="styleSheet">
+                   <string notr="true">text-align: center;</string>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="resources.qrc">
+                    <normaloff>:/Icon-P/resources/Icons - P/x-circle.svg</normaloff>:/Icon-P/resources/Icons - P/x-circle.svg</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>24</width>
+                    <height>24</height>
+                   </size>
                   </property>
                  </widget>
                 </item>
@@ -833,7 +1203,6 @@ text-align: center;</string>
                    <property name="font">
                     <font>
                      <pointsize>15</pointsize>
-                     <weight>75</weight>
                      <bold>true</bold>
                     </font>
                    </property>
@@ -854,7 +1223,6 @@ text-align: center;</string>
                    <property name="font">
                     <font>
                      <pointsize>15</pointsize>
-                     <weight>75</weight>
                      <bold>true</bold>
                     </font>
                    </property>
@@ -875,7 +1243,6 @@ text-align: center;</string>
                    <property name="font">
                     <font>
                      <pointsize>15</pointsize>
-                     <weight>75</weight>
                      <bold>true</bold>
                     </font>
                    </property>
@@ -889,53 +1256,6 @@ text-align: center;</string>
                  </item>
                 </layout>
                </widget>
-              </widget>
-             </item>
-             <item>
-              <widget class="QFrame" name="closeCenterMenuBtnFrame">
-               <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
-               <layout class="QHBoxLayout" name="horizontalLayout_4">
-                <property name="spacing">
-                 <number>0</number>
-                </property>
-                <property name="leftMargin">
-                 <number>0</number>
-                </property>
-                <property name="topMargin">
-                 <number>0</number>
-                </property>
-                <property name="rightMargin">
-                 <number>0</number>
-                </property>
-                <property name="bottomMargin">
-                 <number>5</number>
-                </property>
-                <item alignment="Qt::AlignHCenter">
-                 <widget class="QPushButton" name="closeCenterMenu">
-                  <property name="styleSheet">
-                   <string notr="true">text-align: center;</string>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                  <property name="icon">
-                   <iconset resource="resources.qrc">
-                    <normaloff>:/Icons - P/resources/Icons - P/x-circle.svg</normaloff>:/Icons - P/resources/Icons - P/x-circle.svg</iconset>
-                  </property>
-                  <property name="iconSize">
-                   <size>
-                    <width>24</width>
-                    <height>24</height>
-                   </size>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
               </widget>
              </item>
             </layout>
@@ -974,75 +1294,689 @@ text-align: center;</string>
              <string notr="true"/>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>1</number>
             </property>
             <widget class="QWidget" name="homePage">
              <layout class="QVBoxLayout" name="verticalLayout_19">
+              <property name="spacing">
+               <number>0</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
               <item>
-               <widget class="QPushButton" name="click">
+               <widget class="QGroupBox" name="groupBox">
                 <property name="styleSheet">
-                 <string notr="true">#click{
-	background-color: #6E25E6;
-	text-align: center;
-	padding: 5px 5px;
-	border-radius: 10px;
-}</string>
+                 <string notr="true"/>
                 </property>
-                <property name="text">
-                 <string>Click Me !</string>
+                <property name="title">
+                 <string>GroupBox</string>
                 </property>
-                <property name="icon">
-                 <iconset resource="resources.qrc">
-                  <normaloff>:/Icons - W/resources/Icons - W/paperclip.svg</normaloff>:/Icons - W/resources/Icons - W/paperclip.svg</iconset>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>24</width>
-                  <height>24</height>
-                 </size>
-                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_20">
+                 <property name="spacing">
+                  <number>10</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>10</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>25</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>10</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>10</number>
+                 </property>
+                 <item>
+                  <widget class="QSlider" name="horizontalSlider">
+                   <property name="styleSheet">
+                    <string notr="true"/>
+                   </property>
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QRadioButton" name="radioButton">
+                   <property name="styleSheet">
+                    <string notr="true"/>
+                   </property>
+                   <property name="text">
+                    <string>RadioButton</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QSpinBox" name="spinBox">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true"/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="minimumSize">
+                    <size>
+                     <width>0</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true"/>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="comboBox">
+                   <property name="styleSheet">
+                    <string notr="true"/>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>Option - 1</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Option - 2</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Option - 3</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Option - 4</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Option - 5</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="checkBox">
+                   <property name="styleSheet">
+                    <string notr="true"/>
+                   </property>
+                   <property name="text">
+                    <string>CheckBox</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QProgressBar" name="progressBar">
+                   <property name="styleSheet">
+                    <string notr="true"/>
+                   </property>
+                   <property name="value">
+                    <number>24</number>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="click">
+                   <property name="styleSheet">
+                    <string notr="true"/>
+                   </property>
+                   <property name="text">
+                    <string>Click Me !</string>
+                   </property>
+                   <property name="icon">
+                    <iconset>
+                     <normaloff>:/Icons - W/resources/Icons - W/paperclip.svg</normaloff>:/Icons - W/resources/Icons - W/paperclip.svg</iconset>
+                   </property>
+                   <property name="iconSize">
+                    <size>
+                     <width>24</width>
+                     <height>24</height>
+                    </size>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
               </item>
              </layout>
             </widget>
             <widget class="QWidget" name="inboxPage">
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
              <layout class="QVBoxLayout" name="verticalLayout">
+              <property name="spacing">
+               <number>5</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
               <item>
-               <widget class="QLabel" name="inboxLbl">
-                <property name="font">
-                 <font>
-                  <pointsize>15</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
+               <widget class="QGroupBox" name="groupBox_2">
+                <property name="styleSheet">
+                 <string notr="true"/>
                 </property>
-                <property name="text">
-                 <string>Inbox</string>
+                <property name="title">
+                 <string>GroupBox</string>
                 </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
-                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_22">
+                 <property name="spacing">
+                  <number>10</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>10</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>25</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>10</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>10</number>
+                 </property>
+                 <item>
+                  <widget class="QScrollArea" name="scrollArea">
+                   <property name="styleSheet">
+                    <string notr="true"/>
+                   </property>
+                   <property name="widgetResizable">
+                    <bool>true</bool>
+                   </property>
+                   <widget class="QWidget" name="scrollAreaWidgetContents">
+                    <property name="geometry">
+                     <rect>
+                      <x>0</x>
+                      <y>0</y>
+                      <width>228</width>
+                      <height>696</height>
+                     </rect>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout_23">
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_20">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true"/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_19">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true"/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_18">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true"/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_17">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true"/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_16">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true"/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_15">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true"/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_14">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true"/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_13">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true"/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_12">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true"/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_11">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true"/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_10">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true"/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_9">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true"/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_8">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true"/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_7">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true"/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_6">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true"/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_5">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true"/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_4">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true"/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_3">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true"/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit_2">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true"/>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
               </item>
              </layout>
             </widget>
             <widget class="QWidget" name="dataPage">
              <layout class="QVBoxLayout" name="verticalLayout_21">
+              <property name="spacing">
+               <number>5</number>
+              </property>
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
               <item>
-               <widget class="QLabel" name="dataLbl">
-                <property name="font">
-                 <font>
-                  <pointsize>15</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
+               <widget class="QTableWidget" name="tableWidget">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
                 </property>
-                <property name="text">
-                 <string>Data</string>
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
                 </property>
-                <property name="alignment">
-                 <set>Qt::AlignCenter</set>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>16777215</height>
+                 </size>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true"/>
+                </property>
+                <property name="showGrid">
+                 <bool>true</bool>
+                </property>
+                <row>
+                 <property name="text">
+                  <string>1</string>
+                 </property>
+                </row>
+                <column>
+                 <property name="text">
+                  <string>1</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>2</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>3</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>4</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>5</string>
+                 </property>
+                </column>
                </widget>
               </item>
              </layout>
@@ -1098,7 +2032,7 @@ text-align: center;</string>
               <number>0</number>
              </property>
              <property name="bottomMargin">
-              <number>0</number>
+              <number>15</number>
              </property>
              <item>
               <widget class="QFrame" name="topRightMenuTitleFrame">
@@ -1113,24 +2047,44 @@ text-align: center;</string>
                  <number>0</number>
                 </property>
                 <property name="leftMargin">
-                 <number>15</number>
+                 <number>20</number>
                 </property>
                 <property name="topMargin">
-                 <number>15</number>
+                 <number>0</number>
                 </property>
                 <property name="rightMargin">
-                 <number>15</number>
+                 <number>20</number>
                 </property>
                 <property name="bottomMargin">
-                 <number>15</number>
+                 <number>0</number>
                 </property>
-                <item alignment="Qt::AlignHCenter">
+                <item alignment="Qt::AlignLeft">
                  <widget class="QLabel" name="topRightMenuTitle">
                   <property name="text">
                    <string>Menu</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item alignment="Qt::AlignRight">
+                 <widget class="QPushButton" name="closeRightMenu">
+                  <property name="styleSheet">
+                   <string notr="true">text-align: center;</string>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="resources.qrc">
+                    <normaloff>:/Icon-P/resources/Icons - P/x-circle.svg</normaloff>:/Icon-P/resources/Icons - P/x-circle.svg</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>24</width>
+                    <height>24</height>
+                   </size>
                   </property>
                  </widget>
                 </item>
@@ -1149,7 +2103,6 @@ text-align: center;</string>
                    <property name="font">
                     <font>
                      <pointsize>15</pointsize>
-                     <weight>75</weight>
                      <bold>true</bold>
                     </font>
                    </property>
@@ -1170,7 +2123,6 @@ text-align: center;</string>
                    <property name="font">
                     <font>
                      <pointsize>15</pointsize>
-                     <weight>75</weight>
                      <bold>true</bold>
                     </font>
                    </property>
@@ -1184,53 +2136,6 @@ text-align: center;</string>
                  </item>
                 </layout>
                </widget>
-              </widget>
-             </item>
-             <item>
-              <widget class="QFrame" name="closeRightMenuFrame">
-               <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
-               <layout class="QHBoxLayout" name="horizontalLayout_23">
-                <property name="spacing">
-                 <number>0</number>
-                </property>
-                <property name="leftMargin">
-                 <number>0</number>
-                </property>
-                <property name="topMargin">
-                 <number>0</number>
-                </property>
-                <property name="rightMargin">
-                 <number>0</number>
-                </property>
-                <property name="bottomMargin">
-                 <number>5</number>
-                </property>
-                <item alignment="Qt::AlignHCenter">
-                 <widget class="QPushButton" name="closeRightMenu">
-                  <property name="styleSheet">
-                   <string notr="true">text-align: center;</string>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                  <property name="icon">
-                   <iconset resource="resources.qrc">
-                    <normaloff>:/Icons - P/resources/Icons - P/x-circle.svg</normaloff>:/Icons - P/resources/Icons - P/x-circle.svg</iconset>
-                  </property>
-                  <property name="iconSize">
-                   <size>
-                    <width>24</width>
-                    <height>24</height>
-                   </size>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
               </widget>
              </item>
             </layout>

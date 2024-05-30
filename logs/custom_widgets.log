@@ -1116,3 +1116,7 @@
 2024-05-06 18:59:26,028 - DEBUG - new topwidget <__main__.MainWindow object at 0x000001A5FF5ECDC0>
 2024-05-06 18:59:26,028 - DEBUG - pop widget MainWindow MainWindow
 2024-05-06 18:59:26,028 - DEBUG - new topwidget None
+2024-05-18 08:51:09,580 - DEBUG - CACHEDIR=C:\Users\Mohsen.DESKTOP-OSACN5P\.matplotlib
+2024-05-18 08:51:09,590 - DEBUG - Using fontManager instance from C:\Users\Mohsen.DESKTOP-OSACN5P\.matplotlib\fontlist-v390.json
+2024-05-18 08:56:01,377 - DEBUG - CACHEDIR=C:\Users\Mohsen.DESKTOP-OSACN5P\.matplotlib
+2024-05-18 08:56:01,382 - DEBUG - Using fontManager instance from C:\Users\Mohsen.DESKTOP-OSACN5P\.matplotlib\fontlist-v390.json
