@@ -2,4 +2,4 @@ This is nothing special just A simple and beautiful software with PyQt5 Module a
 
 It will be updated soon.
 
-![Modern UI Desing](https://github.com/MohsenSangSefidi/Modern-Ui-With-PyQt5/assets/160093991/29de6ce3-0b95-42c8-a054-798c7ffa2c6b)
+![Screenshot 2024-05-30 185731](https://github.com/MohsenSangSefidi/Modern-Ui-With-PyQt5/assets/160093991/d5bcc9c8-1edd-4e2b-afa4-1fbb51d27673)
